@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title content="网格系统与响应式布局">bootstrap</title>
+	<!--引入bootstrap cdn-->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript " src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{
+			text-align:center;
+			margin: 0;
+			padding: 0;
+			color: #f60;
+		}
+		h2{display: none;}
+		h1{font-size: 30px;}
+		.box{
+			/*width: -webkit-calc(25% - 12px);
+			width: -moz-calc(25% - 12px);
+			width: -o-calc(25% - 12px);
+			width: calc(25% - 12px);*/
+			height: 280px;
+			padding: 0px 15px;
+			margin-bottom: 0px;
+		}
+		.carousel-inner .item img{
+			width:100%;
+		}
+		.container{
+			margin-top: 30px;
+		}
+		.container .box img{
+			width:80px;
+			border-radius: 50%;
+			margin-bottom: 15px;
+		}
+
+		@media (min-width: 992px){
+			*  {font-size:16px;}
+			h1 {font-size: 36px;}
+
+			.container{
+				width:940px;
+			}
+			.box{
+				margin-bottom: 50px;
+				padding: 25px;
+				height: auto;
+			}
+			.container .box img{
+			width: 120px;			
+			margin-bottom: 25px;
+			}
+		}	
+		@media (min-width: 1200px){
+			.container{
+				width:1170px;
+			}
+		}	
+		@media (min-width: 1700px){
+			.container{
+				width:1470px;
+			}		
+		}
+	</style>
+</head>
+<body>
+<!-- 
+1.row 要放在 container内部,row表示1行，分为12列
+2.col-xx-y:y为当前元素所占列，xx:lg/md/sm/xs 4种界面尺寸（lg>=1200px;md>=992px;sm>=768px;xs<768px;
+5.col-lg-offset-2：lg布局下偏移量
+-->
+	<h2>轮播图</h2>
+	<div id="myCarousel" class="carousel slide">
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="./img/bootstrap-banner01.jpg" alt="1">	
+				<div class="carousel-caption">猎豹</div>
+			</div>	
+			<div class="item">
+				<img src="./img/bootstrap-banner02.jpg" alt="2">
+				<div class="carousel-caption">天空</div>	
+			</div>
+			<div class="item">
+				<img src="./img/bootstrap-banner03.jpg" alt="3">	
+				<div class="carousel-caption">大海</div>
+			</div>
+		</div>	
+	</div>
+	<h1>网格系统与响应式布局</h1>
+	<div class="container">
+		<div class="row">
+			<div class="box col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-10 col-xs-offset-1 ">
+				<header>
+				<img src="./img/index-video1.png" alt="">
+				<p>比尔·盖茨</p>
+				</header>
+				<p>比尔盖茨是一名美国著名企业家、投资者、软件工程师、慈善家。他与保罗·艾伦一起创建了微软公司，曾任微软董事长、CEO和首席软件设计师，并持有公司超过8%的普通股，也是公司最大的个人股东。 </p>
+			</div>
+			<div class="box col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4  col-sm-offset-0 col-xs-10 col-xs-offset-1">
+				<header>
+					<img src="./img/index-video3.png" alt="">	
+					<p>扎克伯格</p>
+				</header>
+				<p>扎克伯格出生于美国纽约州，是知名的社交网站Facebook创始人、董事长兼首席执行官，同时也是一名软件设计师。Facebook是他和哈佛大学的同学于2004年共同创立，被誉为Facebook教主。</p>
+			</div>
+			<div class="box col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+				<header>
+				<img src="./img/index-video2.png" alt="">
+				<p>克里斯·波什</p>
+				</header>
+				<p>克里斯波什是一名前美国NBA篮球运动员，曾效力于多伦多猛龙、迈阿密热火队，司职大前锋和中锋。与勒布朗·詹姆斯和德怀恩·韦德组成了新的热火“三巨头”。</p>
+			</div>
+			<div class="box col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+				<header>
+				<img src="./img/index-video4.jpg" alt="">
+				<p>埃隆·马斯克</p>
+				</header>
+				<p>埃隆·马斯克1971年6月28日出生于南非，18岁时移民加拿大，工程师，慈善家，现担任太空探索技术公司（SpaceX）CEO兼CTO、特斯拉公司CEO兼产品架构师、太阳城公司（SolarCity）董事会主席。</p>
+			</div>
+		</div>	
+	</div>
+	
+	<script type="text/javascript">
+		$(function(){
+			$('.carousel').carousel(
+			{
+				interval:2000,
+				wrap:true
+			})
+		})
+	</script>
+</body>
+</html>
